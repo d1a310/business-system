@@ -1,40 +1,30 @@
 import { Link } from "react-router-dom";
 import "./Home.css";
 
-const stats = [
-  ["01", "Randevu yönetimi", "Online ve panelden tek akış"],
-  ["02", "Müşteri yönetimi", "Geçmiş ve ilişkiler tek yerde"],
-  ["03", "Personel yönetimi", "Çalışan, saat ve performans"],
-  ["04", "Performans analizi", "İşletmenizi verilerle büyütün"],
-];
-
 function Home() {
   return (
-    <div className="landing">
-      <div className="landing-noise" />
-
-      <header className="landing-header">
-        <div className="landing-container nav-inner">
-          <Link to="/" className="brand">
-            <span className="brand-mark">B</span>
-            <span className="brand-text">
+    <div className="home-page">
+      <header className="home-navbar">
+        <div className="home-container home-navbar-inner">
+          <Link to="/" className="home-brand" aria-label="Business System ana sayfa">
+            <span className="home-brand-mark">B</span>
+            <span className="home-brand-copy">
               <strong>Business</strong>
               <small>System</small>
             </span>
           </Link>
 
-          <nav className="nav-center">
-            <a href="#platform">Platform</a>
+          <nav className="home-nav-links">
             <a href="#features">Özellikler</a>
-            <a href="#process">Nasıl Çalışır?</a>
+            <a href="#how-it-works">Nasıl Çalışır?</a>
             <a href="#demo">Demo</a>
           </nav>
 
-          <div className="nav-actions">
-            <Link to="/login" className="nav-login">
+          <div className="home-nav-actions">
+            <Link to="/login" className="home-login-link">
               Giriş Yap
             </Link>
-            <a href="#demo" className="nav-cta">
+            <a href="/book/ahmetkata" className="home-nav-cta">
               Demo Talep Et <span>↗</span>
             </a>
           </div>
@@ -42,212 +32,182 @@ function Home() {
       </header>
 
       <main>
-        <section className="hero">
-          <div className="hero-orb orb-one" />
-          <div className="hero-orb orb-two" />
-          <div className="hero-grid-lines" />
-
-          <div className="landing-container hero-layout">
-            <div className="hero-copy">
-              <div className="hero-badge">
-                <span className="status-dot" />
-                İşletmeler için yeni nesil yönetim platformu
+        <section className="home-hero">
+          <div className="home-container home-hero-grid">
+            <div className="home-hero-copy">
+              <div className="home-eyebrow">
+                <span className="home-eyebrow-dot" />
+                İŞLETMELER İÇİN YENİ NESİL YÖNETİM PLATFORMU
               </div>
 
               <h1>
                 İşletmenizi
-                <span>tek ekrandan</span>
-                yönetin.
+                <span> daha akıllı yönetin.</span>
               </h1>
 
-              <p className="hero-text">
+              <p className="home-hero-description">
                 Randevularınızı, müşterilerinizi, çalışanlarınızı ve günlük
-                operasyonunuzu modern bir panelde birleştirin. Daha az karmaşa,
-                daha fazla kontrol.
+                operasyonunuzu tek bir profesyonel platformdan yönetin.
               </p>
 
-              <div className="hero-actions">
-                <a href="#demo" className="btn-primary">
+              <div className="home-hero-actions">
+                <a href="/book/ahmetkata" className="home-primary-button">
                   Ücretsiz Demo
                   <span>→</span>
                 </a>
-                <a href="#platform" className="btn-secondary">
-                  Platformu Keşfet
+
+                <a href="#features" className="home-secondary-button">
+                  Sistemi İncele
+                  <span>↓</span>
                 </a>
               </div>
 
-              <div className="hero-proof">
-                <div className="avatars">
-                  <span>AY</span>
-                  <span>MK</span>
-                  <span>CD</span>
-                  <span>+</span>
-                </div>
-                <div>
-                  <strong>Günlük operasyonunuzu tek akışta toplayın.</strong>
-                  <small>Kurulum ve teknik destek dahil.</small>
-                </div>
+              <div className="home-hero-meta">
+                <span className="home-meta-item">
+                  <b>✓</b> Kurulum ve teknik destek
+                </span>
+                <span className="home-meta-divider" />
+                <span className="home-meta-item">Bulut tabanlı</span>
               </div>
             </div>
 
-            <div className="hero-product-wrap" id="platform">
-              <div className="hero-product-glow" />
-              <div className="product-window">
-                <div className="product-bar">
-                  <div className="product-dots">
-                    <i />
-                    <i />
-                    <i />
-                  </div>
-                  <div className="product-address">business-system / dashboard</div>
-                  <div className="product-live">
+            <div className="home-dashboard-stage" aria-hidden="true">
+              <div className="home-stage-glow home-stage-glow-one" />
+              <div className="home-stage-glow home-stage-glow-two" />
+
+              <div className="home-browser">
+                <div className="home-browser-topbar">
+                  <div className="home-browser-dots">
                     <span />
-                    Canlı
+                    <span />
+                    <span />
+                  </div>
+                  <div className="home-browser-title">Business System / Dashboard</div>
+                  <div className="home-browser-status">
+                    <span />
+                    Sistem aktif
                   </div>
                 </div>
 
-                <div className="product-body">
-                  <aside className="product-sidebar">
-                    <div className="product-logo">B</div>
-                    {["⌂", "◷", "♙", "▣", "↗", "⚙"].map((item, index) => (
-                      <span
-                        key={item}
-                        className={`product-nav-item ${index === 0 ? "active" : ""}`}
-                      >
-                        {item}
-                      </span>
-                    ))}
+                <div className="home-dashboard-preview">
+                  <aside className="home-mini-sidebar">
+                    <div className="home-mini-logo">B</div>
+                    <div className="home-mini-nav active">⌂</div>
+                    <div className="home-mini-nav">◷</div>
+                    <div className="home-mini-nav">♙</div>
+                    <div className="home-mini-nav">□</div>
+                    <div className="home-mini-nav">⚙</div>
                   </aside>
 
-                  <div className="product-main">
-                    <div className="product-top">
+                  <div className="home-mini-content">
+                    <div className="home-mini-top">
                       <div>
-                        <small>BUGÜN · 11 EYLÜL</small>
-                        <h3>Günaydın, İsa 👋</h3>
+                        <span>BUGÜN</span>
+                        <h3>Hoş geldiniz, İsa 👋</h3>
                       </div>
-                      <div className="product-user">İA</div>
+                      <div className="home-mini-avatar">İA</div>
                     </div>
 
-                    <div className="metric-grid">
-                      <div className="metric-card">
+                    <div className="home-mini-stats">
+                      <div className="home-mini-stat">
                         <span>BUGÜNKÜ RANDEVULAR</span>
                         <strong>18</strong>
-                        <small className="up">↗ %12 bu hafta</small>
+                        <small>↑ %12 bu hafta</small>
                       </div>
-                      <div className="metric-card">
+                      <div className="home-mini-stat">
                         <span>BUGÜNKÜ GELİR</span>
                         <strong>7.850₺</strong>
-                        <small className="up">↗ %8 bu hafta</small>
+                        <small>↑ %8 bu hafta</small>
                       </div>
-                      <div className="metric-card">
-                        <span>AKTİF MÜŞTERİ</span>
+                      <div className="home-mini-stat">
+                        <span>AKTİF MÜŞTERİLER</span>
                         <strong>246</strong>
                         <small>+18 bu ay</small>
                       </div>
                     </div>
 
-                    <div className="dashboard-row">
-                      <div className="panel analytics-panel">
-                        <div className="panel-head">
+                    <div className="home-mini-grid">
+                      <div className="home-mini-card home-mini-chart">
+                        <div className="home-mini-card-head">
                           <div>
                             <span>HAFTALIK PERFORMANS</span>
-                            <strong>Randevu yoğunluğu</strong>
+                            <strong>Randevular</strong>
                           </div>
-                          <button type="button">Son 7 gün</button>
+                          <small>Son 7 gün</small>
                         </div>
 
-                        <div className="chart">
-                          <div className="chart-gridline line-a" />
-                          <div className="chart-gridline line-b" />
-                          <div className="chart-gridline line-c" />
-                          <svg viewBox="0 0 500 200" preserveAspectRatio="none">
-                            <defs>
-                              <linearGradient id="chartFill" x1="0" x2="0" y1="0" y2="1">
-                                <stop offset="0%" stopColor="#8b6cff" stopOpacity=".34" />
-                                <stop offset="100%" stopColor="#8b6cff" stopOpacity="0" />
-                              </linearGradient>
-                            </defs>
+                        <div className="home-chart-area">
+                          <div className="home-chart-gridline one" />
+                          <div className="home-chart-gridline two" />
+                          <div className="home-chart-gridline three" />
+                          <svg viewBox="0 0 520 170" preserveAspectRatio="none">
                             <path
-                              d="M0 164 C40 145, 53 149, 95 126 C140 100, 162 137, 200 117 C242 96, 265 105, 308 69 C346 37, 380 81, 416 53 C452 24, 476 37, 500 16 L500 200 L0 200 Z"
-                              fill="url(#chartFill)"
-                            />
-                            <path
-                              d="M0 164 C40 145, 53 149, 95 126 C140 100, 162 137, 200 117 C242 96, 265 105, 308 69 C346 37, 380 81, 416 53 C452 24, 476 37, 500 16"
+                              d="M0 138 C45 120 63 126 105 102 C145 79 178 110 215 91 C256 70 279 83 321 57 C365 30 390 71 431 45 C466 24 490 32 520 10"
                               fill="none"
-                              stroke="#8b6cff"
+                              stroke="currentColor"
                               strokeWidth="4"
                               strokeLinecap="round"
                             />
+                            <path
+                              d="M0 138 C45 120 63 126 105 102 C145 79 178 110 215 91 C256 70 279 83 321 57 C365 30 390 71 431 45 C466 24 490 32 520 10 L520 170 L0 170 Z"
+                              fill="currentColor"
+                              opacity="0.07"
+                            />
                           </svg>
                         </div>
-
-                        <div className="chart-labels">
-                          <span>Pzt</span>
-                          <span>Sal</span>
-                          <span>Çar</span>
-                          <span>Per</span>
-                          <span>Cum</span>
-                          <span>Cmt</span>
-                          <span>Paz</span>
-                        </div>
                       </div>
 
-                      <div className="panel schedule-panel">
-                        <div className="panel-head">
+                      <div className="home-mini-card home-mini-appointments">
+                        <div className="home-mini-card-head">
                           <div>
-                            <span>BUGÜNÜN PROGRAMI</span>
+                            <span>BUGÜNKÜ PROGRAM</span>
                             <strong>Yaklaşan randevular</strong>
                           </div>
-                          <button type="button">3</button>
+                          <small>3 kayıt</small>
                         </div>
 
-                        {[
-                          ["14:30", "Ahmet Yılmaz", "Saç + Sakal", "Onaylı"],
-                          ["15:00", "Mehmet Kaya", "Saç Kesimi", "Bekliyor"],
-                          ["15:30", "Can Demir", "Sakal Tıraşı", "Onaylı"],
-                        ].map(([time, name, service, status]) => (
-                          <div className="schedule-item" key={time}>
-                            <time>{time}</time>
-                            <div>
-                              <strong>{name}</strong>
-                              <small>{service}</small>
-                            </div>
-                            <span className={status === "Bekliyor" ? "waiting" : ""}>
-                              {status}
-                            </span>
+                        <div className="home-mini-appointment">
+                          <span className="home-mini-time">14:30</span>
+                          <div>
+                            <strong>Ahmet Yılmaz</strong>
+                            <small>Saç + Sakal</small>
                           </div>
-                        ))}
-                      </div>
-                    </div>
+                          <span className="home-mini-status">Onaylı</span>
+                        </div>
 
-                    <div className="mini-footer-strip">
-                      <div>
-                        <span>ONLINE RANDEVU</span>
-                        <strong>Aktif</strong>
-                      </div>
-                      <div>
-                        <span>PERSONEL</span>
-                        <strong>8 kişi</strong>
-                      </div>
-                      <div>
-                        <span>MEMNUNİYET</span>
-                        <strong>%96</strong>
+                        <div className="home-mini-appointment">
+                          <span className="home-mini-time">15:00</span>
+                          <div>
+                            <strong>Mehmet Kaya</strong>
+                            <small>Saç Kesimi</small>
+                          </div>
+                          <span className="home-mini-status muted">Bekliyor</span>
+                        </div>
+
+                        <div className="home-mini-appointment">
+                          <span className="home-mini-time">15:30</span>
+                          <div>
+                            <strong>Can Demir</strong>
+                            <small>Sakal Tıraşı</small>
+                          </div>
+                          <span className="home-mini-status">Onaylı</span>
+                        </div>
                       </div>
                     </div>
                   </div>
                 </div>
               </div>
 
-              <div className="floating-note note-left">
-                <span className="floating-icon purple">✓</span>
+              <div className="home-floating-card home-floating-card-one">
+                <span className="home-floating-icon">✓</span>
                 <div>
                   <small>YENİ RANDEVU</small>
                   <strong>Onaylandı</strong>
                 </div>
               </div>
 
-              <div className="floating-note note-right">
-                <span className="floating-icon dark">↗</span>
+              <div className="home-floating-card home-floating-card-two">
+                <span className="home-floating-icon dark">↗</span>
                 <div>
                   <small>BU AY</small>
                   <strong>+24,8% büyüme</strong>
@@ -257,241 +217,211 @@ function Home() {
           </div>
         </section>
 
-        <section className="brand-strip">
-          <div className="landing-container">
-            <span className="brand-strip-title">TEK PLATFORMDA</span>
-            <div className="brand-strip-items">
-              <span>RANDEVU</span>
-              <span>MÜŞTERİ</span>
-              <span>PERSONEL</span>
-              <span>ANALİZ</span>
-              <span>ONLINE REZERVASYON</span>
+        <section className="home-trust">
+          <div className="home-container">
+            <p>İŞLETMENİZİN TÜM OPERASYONU TEK YERDE</p>
+            <div className="home-trust-grid">
+              <span>Randevu Yönetimi</span>
+              <span>Müşteri Takibi</span>
+              <span>Personel Yönetimi</span>
+              <span>Performans Analizi</span>
+              <span>Online Rezervasyon</span>
             </div>
           </div>
         </section>
 
-        <section className="section light-section" id="features">
-          <div className="landing-container">
-            <div className="section-heading">
-              <div className="eyebrow">GÜÇLÜ ARAÇLAR</div>
+        <section className="home-section home-features" id="features">
+          <div className="home-container">
+            <div className="home-section-heading">
+              <div className="home-eyebrow">
+                <span className="home-eyebrow-dot" />
+                GÜÇLÜ ARAÇLAR
+              </div>
               <h2>
-                Sadece bir panel değil.
-                <span> İşletmenizin kontrol merkezi.</span>
+                Günlük işlerinizi
+                <span> daha kolay hale getirin.</span>
               </h2>
               <p>
-                Günlük operasyonun en çok zaman alan noktalarını sadeleştiren,
-                gerçek iş akışlarını merkeze alan bir sistem.
+                Tekrarlayan operasyonları azaltın, müşterilerinizi daha iyi
+                yönetin ve işletmenizin performansını tek ekrandan takip edin.
               </p>
             </div>
 
-            <div className="bento-grid">
-              <article className="feature-card feature-wide">
-                <div className="feature-copy">
-                  <span className="feature-number">01</span>
-                  <h3>Online Randevu</h3>
-                  <p>
-                    Müşterileriniz uygun gün ve saati kendileri seçsin. Siz
-                    panelden tüm akışı yönetin.
-                  </p>
+            <div className="home-feature-grid">
+              <article className="home-feature-card home-feature-main">
+                <div className="home-feature-top">
+                  <div className="home-feature-icon">◷</div>
+                  <span className="home-feature-number">01</span>
                 </div>
-                <div className="booking-ui">
-                  <div className="booking-header">
-                    <span>Randevu Oluştur</span>
-                    <b>3 / 4</b>
+                <h3>Akıllı Randevu Yönetimi</h3>
+                <p>
+                  Müşterileriniz online randevu oluştursun, siz tüm programınızı
+                  tek panelden yönetin. Çakışmaları azaltın ve gününüzü planlayın.
+                </p>
+
+                <div className="home-calendar">
+                  <div className="home-calendar-head">
+                    <strong>Eylül 2026</strong>
+                    <span>‹ &nbsp; ›</span>
                   </div>
-                  <div className="booking-progress">
-                    <span />
+                  <div className="home-calendar-week">
+                    <span>Pzt</span>
+                    <span>Sal</span>
+                    <span>Çar</span>
+                    <span>Per</span>
+                    <span>Cum</span>
                   </div>
-                  <div className="booking-content">
-                    <small>HİZMET</small>
-                    <strong>Saç + Sakal</strong>
-                    <div className="booking-time-list">
-                      <span>14:30</span>
-                      <span className="selected">15:00</span>
-                      <span>15:30</span>
-                      <span>16:00</span>
-                    </div>
+                  <div className="home-calendar-days">
+                    <span>7</span>
+                    <span>8</span>
+                    <span className="selected">9</span>
+                    <span>10</span>
+                    <span>11</span>
+                  </div>
+                  <div className="home-calendar-slots">
+                    <span>14:30</span>
+                    <span className="busy">15:00</span>
+                    <span>15:30</span>
+                    <span className="busy">16:00</span>
                   </div>
                 </div>
               </article>
 
-              <article className="feature-card">
-                <span className="feature-number">02</span>
-                <div className="card-icon">♙</div>
-                <h3>Müşteri CRM</h3>
+              <article className="home-feature-card home-feature-customer">
+                <div className="home-feature-top">
+                  <div className="home-feature-icon">♙</div>
+                  <span className="home-feature-number">02</span>
+                </div>
+                <h3>Müşteri Yönetimi</h3>
                 <p>
-                  Müşteri geçmişi, notlar ve randevular tek profilde.
+                  Müşterilerinizi, geçmiş randevularını ve iletişim bilgilerini
+                  tek, düzenli bir kayıt üzerinden takip edin.
                 </p>
-                <div className="customer-card-mini">
-                  <div>AY</div>
-                  <section>
+                <div className="home-customer-preview">
+                  <div className="home-customer-avatar">AY</div>
+                  <div>
                     <strong>Ahmet Yılmaz</strong>
-                    <small>12 randevu · VIP</small>
-                  </section>
+                    <small>Son ziyaret · 3 gün önce</small>
+                  </div>
                   <span>→</span>
                 </div>
               </article>
 
-              <article className="feature-card">
-                <span className="feature-number">03</span>
-                <div className="card-icon">↗</div>
-                <h3>Canlı Analiz</h3>
+              <article className="home-feature-card home-feature-analytics">
+                <div className="home-feature-top">
+                  <div className="home-feature-icon">↗</div>
+                  <span className="home-feature-number">03</span>
+                </div>
+                <h3>Performans Analizi</h3>
                 <p>
-                  Gelir, randevu ve çalışan performansını net biçimde görün.
+                  Gelir, randevu ve çalışan performansınızı anlaşılır verilerle
+                  takip edin.
                 </p>
-                <div className="bars">
-                  <span style={{ height: "35%" }} />
+                <div className="home-bars" aria-hidden="true">
+                  <span style={{ height: "28%" }} />
                   <span style={{ height: "48%" }} />
-                  <span style={{ height: "41%" }} />
-                  <span style={{ height: "63%" }} />
-                  <span style={{ height: "55%" }} />
-                  <span style={{ height: "77%" }} />
-                  <span style={{ height: "92%" }} />
-                </div>
-              </article>
-
-              <article className="feature-card feature-dark">
-                <div className="feature-dark-top">
-                  <span className="feature-number">04</span>
-                  <span className="dark-pill">OTOMATİK</span>
-                </div>
-                <h3>Personel ve çalışma saatleri</h3>
-                <p>
-                  Çalışanlarınızı, müsaitliklerini ve çalışma saatlerini tek
-                  ekrandan yönetin.
-                </p>
-                <div className="team-stack">
-                  <span>AY</span>
-                  <span>MK</span>
-                  <span>CD</span>
-                  <span>+5</span>
-                </div>
-              </article>
-
-              <article className="feature-card feature-highlight">
-                <div>
-                  <span className="feature-number">05</span>
-                  <h3>Daha düzenli. Daha hızlı.</h3>
-                  <p>
-                    Karmaşık ekranlar yerine günlük iş akışına göre tasarlanmış
-                    sade bir deneyim.
-                  </p>
-                </div>
-                <div className="highlight-ring">
-                  <span>∞</span>
+                  <span style={{ height: "40%" }} />
+                  <span style={{ height: "64%" }} />
+                  <span style={{ height: "54%" }} />
+                  <span style={{ height: "82%" }} />
+                  <span style={{ height: "72%" }} />
                 </div>
               </article>
             </div>
           </div>
         </section>
 
-        <section className="stats-section">
-          <div className="landing-container">
-            <div className="section-heading centered light-heading">
-              <div className="eyebrow">TEK YERDE</div>
+        <section className="home-process" id="how-it-works">
+          <div className="home-container">
+            <div className="home-section-heading centered">
+              <div className="home-eyebrow">
+                <span className="home-eyebrow-dot" />
+                NASIL ÇALIŞIR?
+              </div>
               <h2>
-                İşletmenin tamamı
-                <span> aynı sistemde.</span>
+                Üç adımda
+                <span> dijital işletme.</span>
               </h2>
               <p>
-                En temel operasyonlardan performans analizine kadar her şey aynı
-                akışın içinde.
+                Sisteminizi kurun, operasyonunuzu yönetin ve işletmenizi
+                verilerle büyütün.
               </p>
             </div>
 
-            <div className="stats-grid">
-              {stats.map(([number, title, text]) => (
-                <div className="stat-block" key={number}>
-                  <span>{number}</span>
-                  <strong>{title}</strong>
-                  <p>{text}</p>
+            <div className="home-steps">
+              <article className="home-step">
+                <span className="home-step-index">01</span>
+                <div className="home-step-line" />
+                <h3>Sisteminizi Kurun</h3>
+                <p>
+                  İşletmenize uygun hizmet, çalışan, çalışma saatleri ve online
+                  randevu yapısını dakikalar içinde hazırlayın.
+                </p>
+              </article>
+
+              <article className="home-step">
+                <span className="home-step-index">02</span>
+                <div className="home-step-line" />
+                <h3>Müşterilerinizi Yönetin</h3>
+                <p>
+                  Randevu, müşteri ve personel süreçlerini tek panel üzerinden
+                  merkezi şekilde kontrol edin.
+                </p>
+              </article>
+
+              <article className="home-step">
+                <span className="home-step-index">03</span>
+                <div className="home-step-line" />
+                <h3>İşletmenizi Büyütün</h3>
+                <p>
+                  İşletmenizin performansını ölçün, güçlü ve geliştirilmesi
+                  gereken alanları veriler üzerinden görün.
+                </p>
+              </article>
+            </div>
+          </div>
+        </section>
+
+        <section className="home-cta" id="demo">
+          <div className="home-container">
+            <div className="home-cta-box">
+              <div className="home-cta-content">
+                <div className="home-eyebrow">
+                  <span className="home-eyebrow-dot" />
+                  İLK ADIMI ATIN
                 </div>
-              ))}
-            </div>
-          </div>
-        </section>
-
-        <section className="section process-section" id="process">
-          <div className="landing-container">
-            <div className="section-heading centered">
-              <div className="eyebrow">NASIL ÇALIŞIR?</div>
-              <h2>
-                Başlayın,
-                <span> sistem gerisini kolaylaştırsın.</span>
-              </h2>
-              <p>
-                Karmaşık kurulumlarla uğraşmadan işletmenize uygun yapıyı
-                oluşturun ve günlük operasyonu tek panelden yönetin.
-              </p>
-            </div>
-
-            <div className="process-grid">
-              <article>
-                <span>01</span>
-                <div className="process-line" />
-                <h3>Sisteminizi kurun</h3>
-                <p>
-                  Hizmetlerinizi, çalışanlarınızı ve çalışma saatlerinizi
-                  tanımlayın.
-                </p>
-              </article>
-              <article>
-                <span>02</span>
-                <div className="process-line" />
-                <h3>Randevularınızı yönetin</h3>
-                <p>
-                  Online ve panelden gelen randevuları tek akışta kontrol edin.
-                </p>
-              </article>
-              <article>
-                <span>03</span>
-                <div className="process-line" />
-                <h3>Verilerle büyüyün</h3>
-                <p>
-                  Performansınızı ölçün ve işletmeniz için doğru kararlar alın.
-                </p>
-              </article>
-            </div>
-          </div>
-        </section>
-
-        <section className="cta-section" id="demo">
-          <div className="landing-container">
-            <div className="cta-box">
-              <div className="cta-orb" />
-              <div className="cta-copy">
-                <div className="eyebrow">İLK ADIMI ATIN</div>
                 <h2>
                   İşletmenizi
-                  <span> daha güçlü bir sisteme taşıyın.</span>
+                  <span> birlikte dijitalleştirelim.</span>
                 </h2>
                 <p>
-                  İşletmenize uygun yönetim yapısını birlikte oluşturalım.
+                  Size uygun yönetim yapısını birlikte oluşturalım ve günlük
+                  operasyonunuzu daha düzenli hale getirelim.
                 </p>
               </div>
 
-              <a href="mailto:info@example.com" className="cta-button">
-                Demo Talep Et <span>↗</span>
+              <a className="home-cta-button" href="/book/ahmetkata">
+                Demo Talep Et
+                <span>↗</span>
               </a>
             </div>
           </div>
         </section>
       </main>
 
-      <footer className="landing-footer">
-        <div className="landing-container footer-inner">
-          <Link to="/" className="brand">
-            <span className="brand-mark">B</span>
-            <span className="brand-text">
+      <footer className="home-footer" id="contact">
+        <div className="home-container home-footer-inner">
+          <Link to="/" className="home-brand">
+            <span className="home-brand-mark">B</span>
+            <span className="home-brand-copy">
               <strong>Business</strong>
               <small>System</small>
             </span>
           </Link>
 
-          <div className="footer-links">
-            <a href="#platform">Platform</a>
+          <div className="home-footer-links">
             <a href="#features">Özellikler</a>
-            <a href="#process">Nasıl Çalışır?</a>
+            <a href="#how-it-works">Nasıl Çalışır?</a>
             <Link to="/login">Giriş</Link>
           </div>
 
